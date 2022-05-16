@@ -6,16 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("board")
 public class Mycontroller {
 	
 	
 	@RequestMapping(value = "/write")
 	public String write() {
-		return "write";
+		return "/board/write";
 	}
 	
 	
-	@RequestMapping("/board/reply")
+	@RequestMapping("/reply")
 	public ModelAndView reply() {
 		
 		ModelAndView mv = new ModelAndView();
@@ -29,7 +30,7 @@ public class Mycontroller {
 	}
 	
 	
-	@RequestMapping("/board/content")
+	@RequestMapping("/content")
 	public String content(Model model) {
 		
 		model.addAttribute("memberId", "tiger");
